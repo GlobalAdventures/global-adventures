@@ -17,7 +17,25 @@ body{
 background:#f5f7fa;
 color:#333;
 }
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.75);
+padding:15px;
+text-align:center;
+z-index:1000;
+backdrop-filter:blur(10px);
+}
 
+nav a{
+color:white;
+text-decoration:none;
+margin:0 12px;
+font-weight:bold;
+font-size:15px;
+}
 header{
 background:
 linear-gradient(rgba(5,20,50,0.75),rgba(5,20,50,0.75)),
@@ -113,7 +131,12 @@ font-weight:bold;
 </head>
 
 <body>
-
+<nav>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#destinations">Destinations</a>
+<a href="#contact">Contact</a>
+</nav>
 <header>
 <img src="11F83644-084B-4E49-9442-558F59828F65.png"
 alt="Global Adventures Logo"
@@ -126,7 +149,7 @@ WhatsApp Us
 
 </header>
 
-<section>
+<section id="services">>
 <h2 class="title">Our Services</h2>
 
 <div class="grid">
@@ -154,7 +177,7 @@ WhatsApp Us
 </div>
 </section>
 
-<section>
+<section id="destinations">
 <h2 class="title">Destinations</h2>
 
 <div class="destinations">
@@ -170,7 +193,7 @@ WhatsApp Us
 
 </section>
 
-<section>
+<section id="contact">
 <h2 class="title">Contact Us</h2>
 
 <div class="card">
