@@ -464,7 +464,10 @@ var name=document.getElementById("name").value;
 var phone=document.getElementById("phone").value;
 var country=document.getElementById("country").value;
 var visa=document.getElementById("visa").value;
-
+if(name.trim()=="" || phone.trim()==""){
+alert("Please enter Name and Phone Number");
+return;
+}
 var message =
 "Hello Global Adventures%0A%0A"+
 "Name: "+name+"%0A"+
