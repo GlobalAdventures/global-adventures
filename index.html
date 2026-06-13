@@ -143,29 +143,61 @@ color:#d4af37;
 font-size:24px;
 margin-top:15px;
 }
+.line1,.line2,.line3,.line4{
+opacity:0;
+animation:fadeUp 0.8s ease forwards;
+}
+
+.line1{
+font-size:24px;
+color:#fff;
+animation-delay:0.3s;
+}
+
+.line2{
+font-size:48px;
+font-weight:900;
+color:#D4AF37;
+animation-delay:1s;
+}
+
+.line3{
+font-size:20px;
+color:#fff;
+margin-top:15px;
+animation-delay:1.7s;
+}
+
+.line4{
+font-size:24px;
+color:#fff;
+margin-top:20px;
+animation-delay:2.4s;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 </style>
 </head>
 <body>
 
 <div id="splash">
 
-<div style="font-size:24px;color:#ffffff;letter-spacing:2px;margin-bottom:10px;">
-Welcome to
-</div>
+<div class="line1">Welcome to</div>
 
-<div style="font-size:48px;font-weight:900;color:#D4AF37;letter-spacing:4px;line-height:1.1;">
-GLOBAL ADVENTURES
-</div>
+<div class="line2">GLOBAL ADVENTURES</div>
 
-<div style="font-size:20px;color:#ffffff;margin-top:20px;">
-Your Trusted Immigration Partner
-</div>
+<div class="line3">Your Trusted Immigration Partner</div>
 
-<div style="width:120px;height:2px;background:#D4AF37;margin:20px auto;"></div>
-
-<div style="font-size:24px;color:#ffffff;">
-आपका हार्दिक स्वागत है
-</div>
+<div class="line4">आपका हार्दिक स्वागत है</div>
 
 </div>
 
