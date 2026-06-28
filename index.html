@@ -539,13 +539,35 @@ Work Permit • Immigration
 </footer>
 <script>
 function toggle(id){
-var x=document.getElementById(id);
 
-if(x.style.display==="none"){
-x.style.display="block";
-}else{
-x.style.display="none";
-}
+    var all = [
+        "tourist",
+        "study",
+        "work",
+        "immigration",
+        "canada",
+        "usa",
+        "uk",
+        "australia",
+        "newzealand",
+        "uae"
+    ];
+
+    all.forEach(function(item){
+        var element = document.getElementById(item);
+
+        if(element && item !== id){
+            element.style.display = "none";
+        }
+    });
+
+    var current = document.getElementById(id);
+
+    if(current.style.display === "block"){
+        current.style.display = "none";
+    }else{
+        current.style.display = "block";
+    }
 }
 const images = [
 "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1600&q=80",
