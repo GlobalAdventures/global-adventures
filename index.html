@@ -409,7 +409,7 @@ support and transparent consultation.
 <input id="name" type="text" placeholder="Enter Your Name" style="width:100%;padding:12px;margin-bottom:15px;">
 
 <p><strong>Phone:</strong></p>
-<input id="phone" type="tel" placeholder="Enter Phone Number" style="width:100%;padding:12px;margin-bottom:15px;">
+<input id="phone" type="tel" maxlength="10" inputmode="numeric" placeholder="Enter Phone Number" style="width:100%;padding:12px;margin-bottom:15px;">
 <p><strong>Interested Country:</strong></p>
 <select id="country" style="width:100%;padding:12px;margin-bottom:15px;">
 <option>Canada</option>
@@ -567,26 +567,32 @@ images[current] +
 }, 5000);
 function sendWhatsApp(){
 
-var name=document.getElementById("name").value;
-var phone=document.getElementById("phone").value;
-var country=document.getElementById("country").value;
-var visa=document.getElementById("visa").value;
-if(name.trim()=="" || phone.trim()==""){
-alert("Please enter Name and Phone Number");
-return;
-}
-var message =
-"Hello Global Adventures%0A%0A"+
-"Name: "+name+"%0A"+
-"Phone: "+phone+"%0A"+
-"Country: "+country+"%0A"+
-"Visa Type: "+visa;
+    var name = document.getElementById("name").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var country = document.getElementById("country").value;
+    var visa = document.getElementById("visa").value;
 
-window.open(
-"https://wa.me/919041521511?text="+message,
-"_blank"
-);
+    if(name === ""){
+        alert("Please enter your Name.");
+        return;
+    }
 
+    if(!/^[0-9]{10}$/.test(phone)){
+        alert("Please enter a valid 10-digit Mobile Number.");
+        return;
+    }
+
+    var message =
+    "Hello Global Adventures%0A%0A"+
+    "Name: "+name+"%0A"+
+    "Phone: "+phone+"%0A"+
+    "Country: "+country+"%0A"+
+    "Visa Type: "+visa;
+
+    window.open(
+        "https://wa.me/919041521511?text="+message,
+        "_blank"
+    );
 }
 </script>
 <script>
