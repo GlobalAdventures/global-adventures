@@ -612,10 +612,16 @@ function sendWhatsApp(){
     "Visa Type: "+visa;
 
     window.open(
-        "https://wa.me/919041521511?text="+message,
-        "_blank"
-    );
-    
+"https://wa.me/919041521511?text="+message,
+"_blank"
+);
+
+setTimeout(function(){
+
+alert(
+"✅ Assessment Submitted Successfully!\n\nThank you for choosing Global Adventures.\n\nOur visa expert will contact you shortly."
+);
+
 document.getElementById("name").value = "";
 document.getElementById("phone").value = "";
 document.getElementById("country").selectedIndex = 0;
@@ -623,6 +629,8 @@ document.getElementById("visa").selectedIndex = 0;
 
 document.getElementById("name").blur();
 document.getElementById("phone").blur();
+
+},1000);
 
 }
 </script>
