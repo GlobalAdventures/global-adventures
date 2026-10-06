@@ -1150,6 +1150,311 @@ footer {
     width: 100%;
   }
 }
+
+/* Dedicated Mobile Handset Breakpoint (375px - 480px) */
+@media (max-width: 480px) {
+  /* 1. Header & Hero Section */
+  header {
+    padding: 92px 14px 48px;
+    min-height: 75vh;
+  }
+
+  .hero-logo {
+    max-width: 210px;
+    width: 68%;
+    margin-bottom: 16px;
+  }
+
+  .hero-badge {
+    font-size: 11px;
+    padding: 4px 14px;
+    margin-bottom: 14px;
+    letter-spacing: 0.8px;
+  }
+
+  header p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    margin-bottom: 24px;
+    max-width: 340px;
+  }
+
+  .hero-actions {
+    gap: 12px;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 14px;
+  }
+
+  /* 2. Section Headings */
+  section {
+    padding: 42px 14px;
+    scroll-margin-top: 72px;
+  }
+
+  .section-header {
+    margin-bottom: 26px;
+  }
+
+  .title {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .title-underline {
+    width: 42px;
+    height: 2.5px;
+    margin: 8px auto 0;
+  }
+
+  /* 3. Cards & Accordion */
+  .card, .about-card, .assessment-card, .contact-card {
+    padding: 18px 14px;
+    border-radius: 12px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .card-icon-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  .card-icon-badge svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .flag-badge {
+    font-size: 22px;
+  }
+
+  .accordion-arrow {
+    width: 22px;
+    height: 22px;
+  }
+
+  .accordion-arrow svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .accordion-content {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .accordion-content p {
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+
+  /* 4. Why Choose Us */
+  .about-card > p {
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .why-features {
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .why-features div {
+    padding: 12px 14px;
+    gap: 12px;
+    border-radius: 10px;
+  }
+
+  .why-features div span {
+    font-size: 14px;
+  }
+
+  .benefit-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* 5. Free Assessment Form (Input zoom prevention) */
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .form-control {
+    font-size: 16px; /* Exactly 16px to prevent iOS Safari auto-zoom */
+    padding: 11px 13px;
+    border-radius: 7px;
+  }
+
+  .assessment-card .btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  /* 6. FAQ Section */
+  .faq-card {
+    padding: 18px 16px;
+    border-radius: 10px;
+  }
+
+  .faq-card h3 {
+    font-size: 15.5px;
+    margin-bottom: 6px;
+  }
+
+  .faq-card p {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  /* 7. Client Reviews / Slider */
+  .testimonial-card {
+    padding: 18px 14px;
+    min-height: 190px;
+    border-radius: 12px;
+  }
+
+  .stars-container {
+    gap: 3px;
+    margin-bottom: 10px;
+  }
+
+  .star-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .testimonial-quote {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .testimonial-author {
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  .author-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .author-name {
+    font-size: 13.5px;
+  }
+
+  .reviews-dots {
+    margin-top: 18px;
+    gap: 6px;
+  }
+
+  .review-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .review-dot.active {
+    width: 20px;
+  }
+
+  /* 8. Contact Section */
+  .contact-card {
+    padding: 22px 16px;
+  }
+
+  .contact-brand-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .contact-info-list {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .contact-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-item p {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .contact-badge-pill {
+    padding: 8px 14px;
+    font-size: 12.5px;
+    margin-bottom: 20px;
+  }
+
+  .contact-actions .btn {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  /* 9. Footer */
+  footer {
+    padding: 42px 16px 28px;
+  }
+
+  .footer-brand {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  .footer-services {
+    font-size: 12.5px;
+    margin-bottom: 18px;
+  }
+
+  .social-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+    padding-top: 16px;
+  }
+
+  /* 10. Splash Screen */
+  .line1 {
+    font-size: 14px;
+    letter-spacing: 2.5px;
+  }
+
+  .line2 {
+    font-size: 26px;
+    letter-spacing: 1.2px;
+    margin: 8px 0;
+  }
+
+  .line3 {
+    font-size: 14px;
+  }
+
+  .line4 {
+    font-size: 15px;
+    margin-top: 12px;
+  }
+}
 </style>
 </head>
 <body>
