@@ -1,0 +1,15 @@
+{
+  "name": "global-adventures",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Global Adventures | Tourist Visa • Study Visa • Immigration Guidance",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo 'Static app ready'"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
