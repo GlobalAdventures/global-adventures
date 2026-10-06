@@ -2028,41 +2028,69 @@ function closeNavMenu() {
   }
 }
 
-/* Accordion Toggle Logic */
-function toggle(id){
-    var all = [
-        "tourist",
-        "study",
-        "work",
-        "immigration",
-        "canada",
-        "usa",
-        "uk",
-        "australia",
-        "nz",
-        "uae"
-    ];
+/* Independent Single-Open Accordions for Services and Countries */
+var serviceItems = ["tourist", "study", "work", "immigration"];
+var countryItems = ["canada", "usa", "uk", "australia", "nz", "uae"];
 
-    all.forEach(function(item){
-        var element = document.getElementById(item);
-        var arrow = document.getElementById("arrow-" + item);
+var activeService = null;
+var activeCountry = null;
 
-        if(element && item !== id){
-            element.style.display = "none";
-            if (arrow) arrow.style.transform = "rotate(0deg)";
-        }
+function closeAccordionItem(itemId) {
+  var el = document.getElementById(itemId);
+  var arrow = document.getElementById("arrow-" + itemId);
+  if (el) {
+    el.style.display = "none";
+  }
+  if (arrow) {
+    arrow.style.transform = "rotate(0deg)";
+  }
+}
+
+function openAccordionItem(itemId) {
+  var el = document.getElementById(itemId);
+  var arrow = document.getElementById("arrow-" + itemId);
+  if (el) {
+    el.style.display = "block";
+  }
+  if (arrow) {
+    arrow.style.transform = "rotate(180deg)";
+  }
+}
+
+function toggle(id) {
+  if (serviceItems.indexOf(id) !== -1) {
+    // Services Accordion Group
+    var currentEl = document.getElementById(id);
+    var isCurrentlyOpen = (activeService === id) || (currentEl && currentEl.style.display === "block");
+
+    // Close all service cards
+    serviceItems.forEach(function(item) {
+      closeAccordionItem(item);
     });
 
-    var current = document.getElementById(id);
-    var currentArrow = document.getElementById("arrow-" + id);
-
-    if(current.style.display === "block"){
-        current.style.display = "none";
-        if (currentArrow) currentArrow.style.transform = "rotate(0deg)";
-    }else{
-        current.style.display = "block";
-        if (currentArrow) currentArrow.style.transform = "rotate(180deg)";
+    if (isCurrentlyOpen) {
+      activeService = null;
+    } else {
+      openAccordionItem(id);
+      activeService = id;
     }
+  } else if (countryItems.indexOf(id) !== -1) {
+    // Countries Accordion Group
+    var currentEl = document.getElementById(id);
+    var isCurrentlyOpen = (activeCountry === id) || (currentEl && currentEl.style.display === "block");
+
+    // Close all country cards
+    countryItems.forEach(function(item) {
+      closeAccordionItem(item);
+    });
+
+    if (isCurrentlyOpen) {
+      activeCountry = null;
+    } else {
+      openAccordionItem(id);
+      activeCountry = id;
+    }
+  }
 }
 
 /* Background Image Rotation */
