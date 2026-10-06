@@ -1984,6 +1984,35 @@ footer {
 </div>
 
 <script>
+/* Explicitly reset scroll position on page reload/refresh */
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.scrollTo(0, 0);
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+
+if (window.location.hash) {
+  history.replaceState(null, '', window.location.pathname + window.location.search);
+}
+
+window.addEventListener('beforeunload', function() {
+  window.scrollTo(0, 0);
+});
+
+window.addEventListener('pageshow', function() {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+});
+
 /* Mobile Menu Toggle */
 function toggleNavMenu() {
   var nav = document.getElementById("navLinks");
@@ -2166,8 +2195,14 @@ function closePopup(){
     window.location.hash = "#assessment";
 }
 
-/* Splash Screen Fade-out */
+/* Splash Screen Fade-out & Top Scroll Reset */
 window.onload = function() {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  setTimeout(function(){
+    window.scrollTo(0, 0);
+  }, 10);
   setTimeout(function(){
     var splash = document.getElementById("splash");
     if(splash){
