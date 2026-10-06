@@ -433,10 +433,15 @@ header {
 }
 
 /* Interactive Card Accordion Trigger */
+.card.accordion-card {
+  align-self: start;
+}
+
 .accordion-card h3 {
   cursor: pointer;
   user-select: none;
   padding: 4px 0;
+  width: 100%;
 }
 
 .accordion-arrow {
@@ -480,9 +485,15 @@ header {
 }
 
 .accordion-content {
+  display: none;
   margin-top: 14px;
   padding-top: 14px;
   border-top: 1px solid rgba(7, 27, 54, 0.06);
+}
+
+.accordion-content.open,
+.accordion-content.active {
+  display: block;
 }
 
 .accordion-content p {
@@ -2059,11 +2070,10 @@ function openAccordionItem(itemId) {
 
 function toggle(id) {
   if (serviceItems.indexOf(id) !== -1) {
-    // Services Accordion Group
-    var currentEl = document.getElementById(id);
-    var isCurrentlyOpen = (activeService === id) || (currentEl && currentEl.style.display === "block");
+    // Services Accordion Group: strictly single-open
+    var isCurrentlyOpen = (activeService === id);
 
-    // Close all service cards
+    // Unconditionally close all service cards
     serviceItems.forEach(function(item) {
       closeAccordionItem(item);
     });
@@ -2075,11 +2085,10 @@ function toggle(id) {
       activeService = id;
     }
   } else if (countryItems.indexOf(id) !== -1) {
-    // Countries Accordion Group
-    var currentEl = document.getElementById(id);
-    var isCurrentlyOpen = (activeCountry === id) || (currentEl && currentEl.style.display === "block");
+    // Countries Accordion Group: strictly single-open
+    var isCurrentlyOpen = (activeCountry === id);
 
-    // Close all country cards
+    // Unconditionally close all country cards
     countryItems.forEach(function(item) {
       closeAccordionItem(item);
     });
@@ -2092,6 +2101,33 @@ function toggle(id) {
     }
   }
 }
+
+/* Enforce single-open state across breakpoint resizing and device rotation */
+window.addEventListener("resize", function() {
+  if (activeService) {
+    serviceItems.forEach(function(item) {
+      if (item !== activeService) closeAccordionItem(item);
+    });
+  }
+  if (activeCountry) {
+    countryItems.forEach(function(item) {
+      if (item !== activeCountry) closeAccordionItem(item);
+    });
+  }
+});
+
+window.addEventListener("orientationchange", function() {
+  if (activeService) {
+    serviceItems.forEach(function(item) {
+      if (item !== activeService) closeAccordionItem(item);
+    });
+  }
+  if (activeCountry) {
+    countryItems.forEach(function(item) {
+      if (item !== activeCountry) closeAccordionItem(item);
+    });
+  }
+});
 
 /* Background Image Rotation */
 const images = [
