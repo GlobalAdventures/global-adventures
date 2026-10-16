@@ -566,12 +566,300 @@ header {
   flex-shrink: 0;
 }
 
-/* Country Flag Pill */
+/* Country Flag Pill & SVG Badges */
 .flag-badge {
-  font-size: 26px;
-  line-height: 1;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.country-flag-svg {
+  width: 32px;
+  height: 22px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+  display: block;
+}
+
+/* Countries We Serve Overlapping 3D Carousel */
+.country-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 10px 0 0;
+}
+
+.country-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  padding: 8px 0;
+}
+
+.country-carousel-stage {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  perspective: 1200px;
+  transition: min-height 0.35s ease;
+  padding: 14px 0 24px;
+}
+
+.country-carousel-card {
+  position: absolute;
+  width: 380px;
+  max-width: 86vw;
+  background: var(--card-bg);
+  border-radius: 14px;
+  border-top: 3px solid var(--champagne-gold);
+  border-left: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease,
+              border-top-color 0.35s ease;
+  will-change: transform, opacity, filter;
+  user-select: none;
+  top: 14px;
+  outline: none;
+}
+
+/* Center Active Card */
+.country-carousel-card.is-active {
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
+  filter: blur(0px);
+  z-index: 10;
+  pointer-events: auto;
+  box-shadow: 0 16px 36px rgba(7, 27, 54, 0.14), 0 0 0 1px rgba(201, 162, 39, 0.3);
+  border-top-color: var(--champagne-gold);
+  cursor: default;
+}
+
+/* Left Side Card */
+.country-carousel-card.is-prev {
+  transform: translate3d(-60%, 0, -60px) scale(0.86);
+  opacity: 0.55;
+  filter: blur(2px);
+  z-index: 5;
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(7, 27, 54, 0.08);
+}
+
+.country-carousel-card.is-prev:hover {
+  opacity: 0.8;
+  filter: blur(0.8px);
+  transform: translate3d(-58%, 0, -40px) scale(0.89);
+}
+
+/* Right Side Card */
+.country-carousel-card.is-next {
+  transform: translate3d(60%, 0, -60px) scale(0.86);
+  opacity: 0.55;
+  filter: blur(2px);
+  z-index: 5;
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(7, 27, 54, 0.08);
+}
+
+.country-carousel-card.is-next:hover {
+  opacity: 0.8;
+  filter: blur(0.8px);
+  transform: translate3d(58%, 0, -40px) scale(0.89);
+}
+
+/* Far Left Hidden Card */
+.country-carousel-card.is-hidden-left {
+  transform: translate3d(-110%, 0, -120px) scale(0.72);
+  opacity: 0;
+  filter: blur(4px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Far Right Hidden Card */
+.country-carousel-card.is-hidden-right {
+  transform: translate3d(110%, 0, -120px) scale(0.72);
+  opacity: 0;
+  filter: blur(4px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Hidden Back Card */
+.country-carousel-card.is-hidden-back {
+  transform: translate3d(0, 0, -180px) scale(0.68);
+  opacity: 0;
+  filter: blur(5px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.country-carousel-card:focus-visible {
+  outline: 2px solid var(--champagne-gold);
+  outline-offset: 3px;
+}
+
+/* Carousel Navigation Arrows */
+.country-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  box-shadow: 0 4px 14px rgba(7, 27, 54, 0.12);
+  color: var(--primary-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.country-carousel-arrow:hover {
+  background: var(--primary-navy);
+  color: var(--champagne-gold);
+  border-color: var(--champagne-gold);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 20px rgba(201, 162, 39, 0.25);
+}
+
+.country-carousel-arrow:focus-visible {
+  outline: 2px solid var(--champagne-gold);
+  outline-offset: 3px;
+}
+
+.country-carousel-arrow svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+}
+
+.country-carousel-arrow.prev {
+  left: 0;
+}
+
+.country-carousel-arrow.next {
+  right: 0;
+}
+
+/* Carousel Dots */
+.country-carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.country-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(7, 27, 54, 0.15);
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.country-dot:hover {
+  background: rgba(201, 162, 39, 0.5);
+}
+
+.country-dot.active {
+  background: var(--champagne-gold);
+  border-color: var(--champagne-gold);
+  width: 26px;
+  border-radius: 5px;
+}
+
+.country-dot:focus-visible {
+  outline: 2px solid var(--champagne-gold);
+  outline-offset: 2px;
+}
+
+/* Destination Photograph in Country Card */
+.country-photo-container {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 6px 0 14px;
+  position: relative;
+  background: rgba(7, 27, 54, 0.05);
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  box-shadow: 0 4px 12px rgba(7, 27, 54, 0.08);
+}
+
+.country-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.country-carousel-card:hover .country-photo {
+  transform: scale(1.03);
+}
+
+.country-visa-list {
+  padding-top: 4px;
+}
+
+.country-visa-list p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* Countries We Serve: Permanently Visible Card Content */
+.country-carousel-card .accordion-content {
+  display: block !important;
+  margin-top: 10px;
+  padding-top: 0;
+  border-top: none;
+}
+
+.country-carousel-card h3 {
+  cursor: default;
+  margin-bottom: 8px;
+}
+
+.country-carousel-card.is-prev h3,
+.country-carousel-card.is-next h3 {
+  cursor: pointer;
+}
+
+.country-carousel-card .accordion-arrow {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .country-carousel-card {
+    transition: none !important;
+    filter: none !important;
+  }
 }
 
 /* Assessment Form */
@@ -1149,6 +1437,31 @@ footer {
   .contact-actions .btn {
     width: 100%;
   }
+
+  /* Countries Carousel Tablet Adjustments */
+  .country-carousel-stage {
+    min-height: 500px;
+  }
+
+  .country-carousel-card {
+    width: 320px;
+  }
+
+  .country-carousel-card.is-prev {
+    transform: translate3d(-52%, 0, -40px) scale(0.85);
+  }
+
+  .country-carousel-card.is-next {
+    transform: translate3d(52%, 0, -40px) scale(0.85);
+  }
+
+  .country-carousel-arrow.prev {
+    left: 4px;
+  }
+
+  .country-carousel-arrow.next {
+    right: 4px;
+  }
 }
 
 /* Dedicated Mobile Handset Breakpoint (375px - 480px) */
@@ -1232,8 +1545,55 @@ footer {
     height: 18px;
   }
 
-  .flag-badge {
-    font-size: 22px;
+  .country-flag-svg {
+    width: 28px;
+    height: 19px;
+  }
+
+  .country-carousel-stage {
+    min-height: 460px;
+  }
+
+  .country-carousel-card {
+    width: calc(100% - 48px);
+    max-width: 310px;
+    padding: 18px 14px;
+  }
+
+  .country-photo-container {
+    height: 130px;
+    margin: 4px 0 10px;
+    border-radius: 8px;
+  }
+
+  .country-carousel-card.is-prev {
+    transform: translate3d(-44%, 0, -30px) scale(0.84);
+    opacity: 0.35;
+    filter: blur(1.5px);
+  }
+
+  .country-carousel-card.is-next {
+    transform: translate3d(44%, 0, -30px) scale(0.84);
+    opacity: 0.35;
+    filter: blur(1.5px);
+  }
+
+  .country-carousel-arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  .country-carousel-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .country-carousel-arrow.prev {
+    left: 2px;
+  }
+
+  .country-carousel-arrow.next {
+    right: 2px;
   }
 
   .accordion-arrow {
@@ -1688,131 +2048,267 @@ footer {
     <h2 class="title">Countries We Serve</h2>
     <div class="title-underline"></div>
   </div>
-  <div class="grid">
-    <!-- Canada -->
-    <div class="card accordion-card">
-      <h3 onclick="toggle('canada')">
-        <span class="card-title-left">
-          <span class="flag-badge">🇨🇦</span>
-          <span>Canada</span>
-        </span>
-        <div class="accordion-arrow" id="arrow-canada">
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  <div class="country-carousel-container">
+    <div class="country-carousel-wrapper">
+      <!-- Prev Arrow Button -->
+      <button type="button" class="country-carousel-arrow prev" onclick="prevCountry()" aria-label="Previous Country">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Carousel Stage -->
+      <div class="country-carousel-stage" id="countryStage" role="region" aria-label="Countries We Serve Carousel">
+        <!-- Canada -->
+        <div class="card country-carousel-card is-active" data-country-index="0" data-country-id="canada" onclick="handleCountryCardClick(0, 'canada', event)" onkeydown="handleCountryCardKeyDown(0, 'canada', event)" tabindex="0" role="group" aria-label="Canada Visa Details" aria-hidden="false">
+          <h3>
+            <span class="card-title-left">
+              <span class="flag-badge">
+                <svg class="country-flag-svg" viewBox="0 0 36 24" aria-hidden="true">
+                  <rect width="36" height="24" fill="#D80027" rx="3"/>
+                  <rect x="9" width="18" height="24" fill="#FFFFFF"/>
+                  <path d="M18 5.2l.9 2.5 2.1-.8-.7 2 2.3.9-1.5 1.5 1.7.9-2.3 1.2.6 1.8-2-.9-.3 3h-1.6l-.3-3-2 .9.6-1.8-2.3-1.2 1.7-.9-1.5-1.5 2.3-.9-.7-2 2.1.8z" fill="#D80027"/>
+                </svg>
+              </span>
+              <span>Canada</span>
+            </span>
+          </h3>
+          <div id="canada" class="accordion-content country-details">
+            <div class="country-photo-container">
+              <img src="https://images.unsplash.com/photo-1517090504586-fde19ea6066f?auto=format&fit=crop&w=800&q=80" alt="Toronto skyline, Canada" class="country-photo" loading="lazy">
+            </div>
+            <div class="country-visa-list">
+              <p>
+                • Tourist Visa<br>
+                • Study Visa<br>
+                • Work Permit<br>
+                • Visitor Visa & PR Pathways
+              </p>
+            </div>
+          </div>
         </div>
-      </h3>
-      <div id="canada" class="accordion-content" style="display:none;">
-        <p>
-          • Study Visa<br>
-          • Work Permit<br>
-          • Visitor Visa<br>
-          • PR Pathways
-        </p>
+
+        <!-- USA -->
+        <div class="card country-carousel-card is-next" data-country-index="1" data-country-id="usa" onclick="handleCountryCardClick(1, 'usa', event)" onkeydown="handleCountryCardKeyDown(1, 'usa', event)" tabindex="0" role="group" aria-label="USA Visa Details" aria-hidden="false">
+          <h3>
+            <span class="card-title-left">
+              <span class="flag-badge">
+                <svg class="country-flag-svg" viewBox="0 0 36 24" aria-hidden="true">
+                  <defs>
+                    <clipPath id="us-clip"><rect width="36" height="24" rx="3"/></clipPath>
+                  </defs>
+                  <g clip-path="url(#us-clip)">
+                    <rect width="36" height="24" fill="#B22234"/>
+                    <path d="M0 1.84h36M0 5.53h36M0 9.23h36M0 12.92h36M0 16.61h36M0 20.3h36" stroke="#FFFFFF" stroke-width="1.85"/>
+                    <rect width="14.5" height="12.9" fill="#3C3B6E"/>
+                    <g fill="#FFFFFF" transform="scale(0.85) translate(1, 1)">
+                      <circle cx="2.5" cy="2" r="0.75"/><circle cx="6" cy="2" r="0.75"/><circle cx="9.5" cy="2" r="0.75"/><circle cx="13" cy="2" r="0.75"/>
+                      <circle cx="4.25" cy="4.2" r="0.75"/><circle cx="7.75" cy="4.2" r="0.75"/><circle cx="11.25" cy="4.2" r="0.75"/>
+                      <circle cx="2.5" cy="6.4" r="0.75"/><circle cx="6" cy="6.4" r="0.75"/><circle cx="9.5" cy="6.4" r="0.75"/><circle cx="13" cy="6.4" r="0.75"/>
+                      <circle cx="4.25" cy="8.6" r="0.75"/><circle cx="7.75" cy="8.6" r="0.75"/><circle cx="11.25" cy="8.6" r="0.75"/>
+                      <circle cx="2.5" cy="10.8" r="0.75"/><circle cx="6" cy="10.8" r="0.75"/><circle cx="9.5" cy="10.8" r="0.75"/><circle cx="13" cy="10.8" r="0.75"/>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+              <span>USA</span>
+            </span>
+          </h3>
+          <div id="usa" class="accordion-content country-details">
+            <div class="country-photo-container">
+              <img src="https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?auto=format&fit=crop&w=800&q=80" alt="New York skyline and Statue of Liberty, USA" class="country-photo" loading="lazy">
+            </div>
+            <div class="country-visa-list">
+              <p>
+                • Tourist Visa<br>
+                • Study Visa<br>
+                • Work Visa<br>
+                • Business & Visitor Visa
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- United Kingdom -->
+        <div class="card country-carousel-card is-hidden-right" data-country-index="2" data-country-id="uk" onclick="handleCountryCardClick(2, 'uk', event)" onkeydown="handleCountryCardKeyDown(2, 'uk', event)" tabindex="0" role="group" aria-label="United Kingdom Visa Details" aria-hidden="true">
+          <h3>
+            <span class="card-title-left">
+              <span class="flag-badge">
+                <svg class="country-flag-svg" viewBox="0 0 36 24" aria-hidden="true">
+                  <defs>
+                    <clipPath id="uk-clip"><rect width="36" height="24" rx="3"/></clipPath>
+                  </defs>
+                  <g clip-path="url(#uk-clip)">
+                    <rect width="36" height="24" fill="#012169"/>
+                    <path d="M0 0l36 24M36 0L0 24" stroke="#FFFFFF" stroke-width="4"/>
+                    <path d="M0 0l36 24M36 0L0 24" stroke="#C8102E" stroke-width="2.2"/>
+                    <path d="M18 0v24M0 12h36" stroke="#FFFFFF" stroke-width="6.5"/>
+                    <path d="M18 0v24M0 12h36" stroke="#C8102E" stroke-width="4"/>
+                  </g>
+                </svg>
+              </span>
+              <span>United Kingdom</span>
+            </span>
+          </h3>
+          <div id="uk" class="accordion-content country-details">
+            <div class="country-photo-container">
+              <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="London and Big Ben, United Kingdom" class="country-photo" loading="lazy">
+            </div>
+            <div class="country-visa-list">
+              <p>
+                • Tourist Visa<br>
+                • Study Visa<br>
+                • Work Visa<br>
+                • Skilled Worker Route & Visitor Visa
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Australia -->
+        <div class="card country-carousel-card is-hidden-back" data-country-index="3" data-country-id="australia" onclick="handleCountryCardClick(3, 'australia', event)" onkeydown="handleCountryCardKeyDown(3, 'australia', event)" tabindex="0" role="group" aria-label="Australia Visa Details" aria-hidden="true">
+          <h3>
+            <span class="card-title-left">
+              <span class="flag-badge">
+                <svg class="country-flag-svg" viewBox="0 0 36 24" aria-hidden="true">
+                  <defs>
+                    <clipPath id="au-clip"><rect width="36" height="24" rx="3"/></clipPath>
+                    <clipPath id="au-canton"><rect width="18" height="12"/></clipPath>
+                  </defs>
+                  <g clip-path="url(#au-clip)">
+                    <rect width="36" height="24" fill="#00247D"/>
+                    <g clip-path="url(#au-canton)">
+                      <rect width="18" height="12" fill="#012169"/>
+                      <path d="M0 0l18 12M18 0L0 12" stroke="#FFFFFF" stroke-width="2.2"/>
+                      <path d="M0 0l18 12M18 0L0 12" stroke="#C8102E" stroke-width="1.2"/>
+                      <path d="M9 0v12M0 6h18" stroke="#FFFFFF" stroke-width="3.5"/>
+                      <path d="M9 0v12M0 6h18" stroke="#C8102E" stroke-width="2.2"/>
+                    </g>
+                    <polygon points="9,14 10.1,16.5 12.8,16.2 11,18.3 12.2,20.8 9.6,19.9 8.2,22 8,19.3 5.4,19.8 7,17.7 5.6,15.5 8.3,16" fill="#FFFFFF" transform="scale(0.85) translate(1.5, 1)"/>
+                    <circle cx="27" cy="4" r="0.9" fill="#FFFFFF"/>
+                    <circle cx="31" cy="8" r="0.9" fill="#FFFFFF"/>
+                    <circle cx="27" cy="18" r="1.1" fill="#FFFFFF"/>
+                    <circle cx="23" cy="10" r="0.9" fill="#FFFFFF"/>
+                    <circle cx="28.5" cy="12" r="0.6" fill="#FFFFFF"/>
+                  </g>
+                </svg>
+              </span>
+              <span>Australia</span>
+            </span>
+          </h3>
+          <div id="australia" class="accordion-content country-details">
+            <div class="country-photo-container">
+              <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80" alt="Sydney Opera House, Australia" class="country-photo" loading="lazy">
+            </div>
+            <div class="country-visa-list">
+              <p>
+                • Tourist Visa<br>
+                • Study Visa<br>
+                • Work Opportunities<br>
+                • Skilled Migration & Visitor Visa
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Zealand -->
+        <div class="card country-carousel-card is-hidden-left" data-country-index="4" data-country-id="nz" onclick="handleCountryCardClick(4, 'nz', event)" onkeydown="handleCountryCardKeyDown(4, 'nz', event)" tabindex="0" role="group" aria-label="New Zealand Visa Details" aria-hidden="true">
+          <h3>
+            <span class="card-title-left">
+              <span class="flag-badge">
+                <svg class="country-flag-svg" viewBox="0 0 36 24" aria-hidden="true">
+                  <defs>
+                    <clipPath id="nz-clip"><rect width="36" height="24" rx="3"/></clipPath>
+                    <clipPath id="nz-canton"><rect width="18" height="12"/></clipPath>
+                  </defs>
+                  <g clip-path="url(#nz-clip)">
+                    <rect width="36" height="24" fill="#00247D"/>
+                    <g clip-path="url(#nz-canton)">
+                      <rect width="18" height="12" fill="#012169"/>
+                      <path d="M0 0l18 12M18 0L0 12" stroke="#FFFFFF" stroke-width="2.2"/>
+                      <path d="M0 0l18 12M18 0L0 12" stroke="#C8102E" stroke-width="1.2"/>
+                      <path d="M9 0v12M0 6h18" stroke="#FFFFFF" stroke-width="3.5"/>
+                      <path d="M9 0v12M0 6h18" stroke="#C8102E" stroke-width="2.2"/>
+                    </g>
+                    <g fill="#CC142B" stroke="#FFFFFF" stroke-width="0.5">
+                      <polygon points="27,4.5 27.5,5.8 28.9,5.8 27.8,6.7 28.2,8 27,7.2 25.8,8 26.2,6.7 25.1,5.8 26.5,5.8" transform="translate(0,-1)"/>
+                      <polygon points="31,8 31.5,9.3 32.9,9.3 31.8,10.2 32.2,11.5 31,10.7 29.8,11.5 30.2,10.2 29.1,9.3 30.5,9.3" transform="scale(0.9) translate(3,0)"/>
+                      <polygon points="27,15.5 27.5,16.8 28.9,16.8 27.8,17.7 28.2,19 27,18.2 25.8,19 26.2,17.7 25.1,16.8 26.5,16.8"/>
+                      <polygon points="23,9.5 23.5,10.8 24.9,10.8 23.8,11.7 24.2,13 23,12.2 21.8,13 22.2,11.7 21.1,10.8 22.5,10.8" transform="scale(0.85) translate(4,1)"/>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+              <span>New Zealand</span>
+            </span>
+          </h3>
+          <div id="nz" class="accordion-content country-details">
+            <div class="country-photo-container">
+              <img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?auto=format&fit=crop&w=800&q=80" alt="Auckland skyline, New Zealand" class="country-photo" loading="lazy">
+            </div>
+            <div class="country-visa-list">
+              <p>
+                • Tourist Visa<br>
+                • Study Visa<br>
+                • Work Pathways<br>
+                • Skilled Opportunities & Visitor Visa
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- UAE -->
+        <div class="card country-carousel-card is-prev" data-country-index="5" data-country-id="uae" onclick="handleCountryCardClick(5, 'uae', event)" onkeydown="handleCountryCardKeyDown(5, 'uae', event)" tabindex="0" role="group" aria-label="UAE Visa Details" aria-hidden="false">
+          <h3>
+            <span class="card-title-left">
+              <span class="flag-badge">
+                <svg class="country-flag-svg" viewBox="0 0 36 24" aria-hidden="true">
+                  <defs>
+                    <clipPath id="uae-clip"><rect width="36" height="24" rx="3"/></clipPath>
+                  </defs>
+                  <g clip-path="url(#uae-clip)">
+                    <rect x="9" y="0" width="27" height="8" fill="#00732F"/>
+                    <rect x="9" y="8" width="27" height="8" fill="#FFFFFF"/>
+                    <rect x="9" y="16" width="27" height="8" fill="#000000"/>
+                    <rect x="0" y="0" width="9" height="24" fill="#FF0000"/>
+                  </g>
+                </svg>
+              </span>
+              <span>UAE</span>
+            </span>
+          </h3>
+          <div id="uae" class="accordion-content country-details">
+            <div class="country-photo-container">
+              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Dubai skyline and Burj Khalifa, UAE" class="country-photo" loading="lazy">
+            </div>
+            <div class="country-visa-list">
+              <p>
+                • Tourist Visa<br>
+                • Study Visa<br>
+                • Employment / Work Visa<br>
+                • Visit Visa & Opportunities
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Next Arrow Button -->
+      <button type="button" class="country-carousel-arrow next" onclick="nextCountry()" aria-label="Next Country">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
     </div>
 
-    <!-- USA -->
-    <div class="card accordion-card">
-      <h3 onclick="toggle('usa')">
-        <span class="card-title-left">
-          <span class="flag-badge">🇺🇸</span>
-          <span>USA</span>
-        </span>
-        <div class="accordion-arrow" id="arrow-usa">
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </div>
-      </h3>
-      <div id="usa" class="accordion-content" style="display:none;">
-        <p>
-          • Tourist Visa<br>
-          • Study Visa<br>
-          • Business Visa<br>
-          • Visitor Visa
-        </p>
-      </div>
-    </div>
-
-    <!-- United Kingdom -->
-    <div class="card accordion-card">
-      <h3 onclick="toggle('uk')">
-        <span class="card-title-left">
-          <span class="flag-badge">🇬🇧</span>
-          <span>United Kingdom</span>
-        </span>
-        <div class="accordion-arrow" id="arrow-uk">
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </div>
-      </h3>
-      <div id="uk" class="accordion-content" style="display:none;">
-        <p>
-          • Study Visa<br>
-          • Work Visa<br>
-          • Visitor Visa<br>
-          • Skilled Worker Route
-        </p>
-      </div>
-    </div>
-
-    <!-- Australia -->
-    <div class="card accordion-card">
-      <h3 onclick="toggle('australia')">
-        <span class="card-title-left">
-          <span class="flag-badge">🇦🇺</span>
-          <span>Australia</span>
-        </span>
-        <div class="accordion-arrow" id="arrow-australia">
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </div>
-      </h3>
-      <div id="australia" class="accordion-content" style="display:none;">
-        <p>
-          • Study Visa<br>
-          • Skilled Migration<br>
-          • Visitor Visa<br>
-          • Work Opportunities
-        </p>
-      </div>
-    </div>
-
-    <!-- New Zealand -->
-    <div class="card accordion-card">
-      <h3 onclick="toggle('nz')">
-        <span class="card-title-left">
-          <span class="flag-badge">🇳🇿</span>
-          <span>New Zealand</span>
-        </span>
-        <div class="accordion-arrow" id="arrow-nz">
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </div>
-      </h3>
-      <div id="nz" class="accordion-content" style="display:none;">
-        <p>
-          • Study Visa<br>
-          • Work Pathways<br>
-          • Visitor Visa<br>
-          • Skilled Opportunities
-        </p>
-      </div>
-    </div>
-
-    <!-- UAE -->
-    <div class="card accordion-card">
-      <h3 onclick="toggle('uae')">
-        <span class="card-title-left">
-          <span class="flag-badge">🇦🇪</span>
-          <span>UAE</span>
-        </span>
-        <div class="accordion-arrow" id="arrow-uae">
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </div>
-      </h3>
-      <div id="uae" class="accordion-content" style="display:none;">
-        <p>
-          • Employment Visa<br>
-          • Visit Visa<br>
-          • Tourist Visa<br>
-          • Work Opportunities
-        </p>
-      </div>
+    <!-- Carousel Dots -->
+    <div class="country-carousel-dots" id="countryDots" role="tablist" aria-label="Countries Carousel Navigation">
+      <button type="button" class="country-dot active" onclick="goToCountry(0)" role="tab" aria-selected="true" aria-label="Go to Canada"></button>
+      <button type="button" class="country-dot" onclick="goToCountry(1)" role="tab" aria-selected="false" aria-label="Go to USA"></button>
+      <button type="button" class="country-dot" onclick="goToCountry(2)" role="tab" aria-selected="false" aria-label="Go to United Kingdom"></button>
+      <button type="button" class="country-dot" onclick="goToCountry(3)" role="tab" aria-selected="false" aria-label="Go to Australia"></button>
+      <button type="button" class="country-dot" onclick="goToCountry(4)" role="tab" aria-selected="false" aria-label="Go to New Zealand"></button>
+      <button type="button" class="country-dot" onclick="goToCountry(5)" role="tab" aria-selected="false" aria-label="Go to UAE"></button>
     </div>
   </div>
 </section>
@@ -2344,12 +2840,9 @@ function closeNavMenu() {
   }
 }
 
-/* Independent Single-Open Accordions for Services and Countries */
+/* Single-Open Accordion for Services */
 var serviceItems = ["tourist", "study", "work", "immigration"];
-var countryItems = ["canada", "usa", "uk", "australia", "nz", "uae"];
-
 var activeService = null;
-var activeCountry = null;
 
 function closeAccordionItem(itemId) {
   var el = document.getElementById(itemId);
@@ -2389,23 +2882,178 @@ function toggle(id) {
       openAccordionItem(id);
       activeService = id;
     }
-  } else if (countryItems.indexOf(id) !== -1) {
-    // Countries Accordion Group: strictly single-open
-    var isCurrentlyOpen = (activeCountry === id);
+  }
+}
 
-    // Unconditionally close all country cards
-    countryItems.forEach(function(item) {
-      closeAccordionItem(item);
-    });
+/* Countries We Serve Overlapping 3D Carousel Controller */
+var currentCountryIndex = 0;
+var totalCountries = 6;
 
-    if (isCurrentlyOpen) {
-      activeCountry = null;
+function syncCountryStageHeight() {
+  var stage = document.getElementById("countryStage");
+  var activeCard = document.querySelector(".country-carousel-card.is-active");
+  if (stage && activeCard) {
+    var cardHeight = activeCard.offsetHeight || activeCard.scrollHeight;
+    stage.style.minHeight = Math.max(480, cardHeight + 42) + "px";
+  }
+}
+
+function updateCountryCarousel() {
+  var cards = document.querySelectorAll(".country-carousel-card");
+  var dots = document.querySelectorAll(".country-dot");
+
+  cards.forEach(function(card) {
+    var index = parseInt(card.getAttribute("data-country-index"), 10);
+    var diff = index - currentCountryIndex;
+
+    // Normalize diff to -2 .. +3 range for 6 items in circular loop
+    if (diff > 3) diff -= 6;
+    if (diff < -2) diff += 6;
+
+    // Reset position classes
+    card.classList.remove(
+      "is-active",
+      "is-prev",
+      "is-next",
+      "is-hidden-left",
+      "is-hidden-right",
+      "is-hidden-back"
+    );
+
+    if (diff === 0) {
+      card.classList.add("is-active");
+      card.setAttribute("aria-hidden", "false");
+    } else if (diff === -1) {
+      card.classList.add("is-prev");
+      card.setAttribute("aria-hidden", "false");
+    } else if (diff === 1) {
+      card.classList.add("is-next");
+      card.setAttribute("aria-hidden", "false");
+    } else if (diff === -2) {
+      card.classList.add("is-hidden-left");
+      card.setAttribute("aria-hidden", "true");
+    } else if (diff === 2) {
+      card.classList.add("is-hidden-right");
+      card.setAttribute("aria-hidden", "true");
     } else {
-      openAccordionItem(id);
-      activeCountry = id;
+      card.classList.add("is-hidden-back");
+      card.setAttribute("aria-hidden", "true");
+    }
+  });
+
+  dots.forEach(function(dot, idx) {
+    if (idx === currentCountryIndex) {
+      dot.classList.add("active");
+      dot.setAttribute("aria-selected", "true");
+    } else {
+      dot.classList.remove("active");
+      dot.setAttribute("aria-selected", "false");
+    }
+  });
+
+  setTimeout(syncCountryStageHeight, 50);
+}
+
+function goToCountry(targetIndex) {
+  currentCountryIndex = ((targetIndex % totalCountries) + totalCountries) % totalCountries;
+  updateCountryCarousel();
+}
+
+function nextCountry() {
+  goToCountry(currentCountryIndex + 1);
+}
+
+function prevCountry() {
+  goToCountry(currentCountryIndex - 1);
+}
+
+// Side-card and center-card click delegation
+function handleCountryCardClick(index, countryId, event) {
+  if (index !== currentCountryIndex) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    goToCountry(index);
+  }
+}
+
+function handleCountryHeaderClick(index, countryId, event) {
+  if (index !== currentCountryIndex) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    goToCountry(index);
+  }
+  // If centered, do not close or collapse - details stay permanently visible
+}
+
+function handleCountryCardKeyDown(index, countryId, event) {
+  if (event.key === "Enter" || event.key === " ") {
+    if (index !== currentCountryIndex) {
+      event.preventDefault();
+      goToCountry(index);
     }
   }
 }
+
+// Keyboard navigation (ArrowLeft / ArrowRight) when #destinations is in view
+document.addEventListener("keydown", function(e) {
+  var destinations = document.getElementById("destinations");
+  if (!destinations) return;
+  var rect = destinations.getBoundingClientRect();
+  var inView = rect.top < window.innerHeight && rect.bottom > 0;
+  if (!inView) return;
+
+  if (e.key === "ArrowLeft") {
+    prevCountry();
+  } else if (e.key === "ArrowRight") {
+    nextCountry();
+  }
+});
+
+// Mobile touch swipe for countries carousel
+(function setupCountrySwipe() {
+  var stage = document.getElementById("countryStage");
+  if (!stage) return;
+  var touchStartX = 0;
+  var touchStartY = 0;
+  var touchEndX = 0;
+  var touchEndY = 0;
+
+  stage.addEventListener("touchstart", function(e) {
+    if (e.touches && e.touches.length > 0) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchEndX = touchStartX;
+      touchEndY = touchStartY;
+    }
+  }, { passive: true });
+
+  stage.addEventListener("touchmove", function(e) {
+    if (e.touches && e.touches.length > 0) {
+      touchEndX = e.touches[0].clientX;
+      touchEndY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  stage.addEventListener("touchend", function() {
+    var deltaX = touchEndX - touchStartX;
+    var deltaY = touchEndY - touchStartY;
+    // Horizontal swipe must dominate vertical scroll
+    if (Math.abs(deltaX) > 36 && Math.abs(deltaX) > Math.abs(deltaY) * 1.3) {
+      if (deltaX < 0) {
+        nextCountry();
+      } else {
+        prevCountry();
+      }
+    }
+  }, { passive: true });
+})();
+
+// Initialize country carousel immediately
+updateCountryCarousel();
 
 /* Enforce single-open state across breakpoint resizing and device rotation */
 window.addEventListener("resize", function() {
@@ -2414,11 +3062,7 @@ window.addEventListener("resize", function() {
       if (item !== activeService) closeAccordionItem(item);
     });
   }
-  if (activeCountry) {
-    countryItems.forEach(function(item) {
-      if (item !== activeCountry) closeAccordionItem(item);
-    });
-  }
+  syncCountryStageHeight();
 });
 
 window.addEventListener("orientationchange", function() {
@@ -2427,11 +3071,7 @@ window.addEventListener("orientationchange", function() {
       if (item !== activeService) closeAccordionItem(item);
     });
   }
-  if (activeCountry) {
-    countryItems.forEach(function(item) {
-      if (item !== activeCountry) closeAccordionItem(item);
-    });
-  }
+  setTimeout(syncCountryStageHeight, 150);
 });
 
 /* Background Image Rotation */
@@ -2569,8 +3209,10 @@ window.onload = function() {
   window.scrollTo(0, 0);
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
+  syncCountryStageHeight();
   setTimeout(function(){
     window.scrollTo(0, 0);
+    syncCountryStageHeight();
   }, 10);
   setTimeout(function(){
     var splash = document.getElementById("splash");
@@ -2578,6 +3220,7 @@ window.onload = function() {
       splash.style.opacity = "0";
       setTimeout(function(){
         splash.style.display = "none";
+        syncCountryStageHeight();
       }, 600);
     }
   }, 3200);
