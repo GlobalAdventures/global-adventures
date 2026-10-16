@@ -583,8 +583,9 @@ header {
   display: block;
 }
 
-/* Countries We Serve Overlapping 3D Carousel */
-.country-carousel-container {
+/* Countries We Serve & Our Services Overlapping 3D Carousels */
+.country-carousel-container,
+.service-carousel-container {
   position: relative;
   width: 100%;
   max-width: 1060px;
@@ -592,7 +593,8 @@ header {
   padding: 10px 0 0;
 }
 
-.country-carousel-wrapper {
+.country-carousel-wrapper,
+.service-carousel-wrapper {
   position: relative;
   display: flex;
   align-items: center;
@@ -602,7 +604,8 @@ header {
   padding: 8px 0;
 }
 
-.country-carousel-stage {
+.country-carousel-stage,
+.service-carousel-stage {
   position: relative;
   width: 100%;
   min-height: 520px;
@@ -614,7 +617,8 @@ header {
   padding: 14px 0 24px;
 }
 
-.country-carousel-card {
+.country-carousel-card,
+.service-carousel-card {
   position: absolute;
   width: 380px;
   max-width: 86vw;
@@ -637,7 +641,8 @@ header {
 }
 
 /* Center Active Card */
-.country-carousel-card.is-active {
+.country-carousel-card.is-active,
+.service-carousel-card.is-active {
   transform: translate3d(0, 0, 0) scale(1);
   opacity: 1;
   filter: blur(0px);
@@ -649,7 +654,8 @@ header {
 }
 
 /* Left Side Card */
-.country-carousel-card.is-prev {
+.country-carousel-card.is-prev,
+.service-carousel-card.is-prev {
   transform: translate3d(-60%, 0, -60px) scale(0.86);
   opacity: 0.55;
   filter: blur(2px);
@@ -659,14 +665,16 @@ header {
   box-shadow: 0 6px 18px rgba(7, 27, 54, 0.08);
 }
 
-.country-carousel-card.is-prev:hover {
+.country-carousel-card.is-prev:hover,
+.service-carousel-card.is-prev:hover {
   opacity: 0.8;
   filter: blur(0.8px);
   transform: translate3d(-58%, 0, -40px) scale(0.89);
 }
 
 /* Right Side Card */
-.country-carousel-card.is-next {
+.country-carousel-card.is-next,
+.service-carousel-card.is-next {
   transform: translate3d(60%, 0, -60px) scale(0.86);
   opacity: 0.55;
   filter: blur(2px);
@@ -676,14 +684,16 @@ header {
   box-shadow: 0 6px 18px rgba(7, 27, 54, 0.08);
 }
 
-.country-carousel-card.is-next:hover {
+.country-carousel-card.is-next:hover,
+.service-carousel-card.is-next:hover {
   opacity: 0.8;
   filter: blur(0.8px);
   transform: translate3d(58%, 0, -40px) scale(0.89);
 }
 
 /* Far Left Hidden Card */
-.country-carousel-card.is-hidden-left {
+.country-carousel-card.is-hidden-left,
+.service-carousel-card.is-hidden-left {
   transform: translate3d(-110%, 0, -120px) scale(0.72);
   opacity: 0;
   filter: blur(4px);
@@ -692,7 +702,8 @@ header {
 }
 
 /* Far Right Hidden Card */
-.country-carousel-card.is-hidden-right {
+.country-carousel-card.is-hidden-right,
+.service-carousel-card.is-hidden-right {
   transform: translate3d(110%, 0, -120px) scale(0.72);
   opacity: 0;
   filter: blur(4px);
@@ -701,7 +712,8 @@ header {
 }
 
 /* Hidden Back Card */
-.country-carousel-card.is-hidden-back {
+.country-carousel-card.is-hidden-back,
+.service-carousel-card.is-hidden-back {
   transform: translate3d(0, 0, -180px) scale(0.68);
   opacity: 0;
   filter: blur(5px);
@@ -709,13 +721,15 @@ header {
   pointer-events: none;
 }
 
-.country-carousel-card:focus-visible {
+.country-carousel-card:focus-visible,
+.service-carousel-card:focus-visible {
   outline: 2px solid var(--champagne-gold);
   outline-offset: 3px;
 }
 
 /* Carousel Navigation Arrows */
-.country-carousel-arrow {
+.country-carousel-arrow,
+.service-carousel-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -734,7 +748,8 @@ header {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.country-carousel-arrow:hover {
+.country-carousel-arrow:hover,
+.service-carousel-arrow:hover {
   background: var(--primary-navy);
   color: var(--champagne-gold);
   border-color: var(--champagne-gold);
@@ -742,27 +757,32 @@ header {
   box-shadow: 0 6px 20px rgba(201, 162, 39, 0.25);
 }
 
-.country-carousel-arrow:focus-visible {
+.country-carousel-arrow:focus-visible,
+.service-carousel-arrow:focus-visible {
   outline: 2px solid var(--champagne-gold);
   outline-offset: 3px;
 }
 
-.country-carousel-arrow svg {
+.country-carousel-arrow svg,
+.service-carousel-arrow svg {
   width: 22px;
   height: 22px;
   stroke: currentColor;
 }
 
-.country-carousel-arrow.prev {
+.country-carousel-arrow.prev,
+.service-carousel-arrow.prev {
   left: 0;
 }
 
-.country-carousel-arrow.next {
+.country-carousel-arrow.next,
+.service-carousel-arrow.next {
   right: 0;
 }
 
 /* Carousel Dots */
-.country-carousel-dots {
+.country-carousel-dots,
+.service-carousel-dots {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -770,7 +790,8 @@ header {
   margin-top: 24px;
 }
 
-.country-dot {
+.country-dot,
+.service-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -781,24 +802,28 @@ header {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.country-dot:hover {
+.country-dot:hover,
+.service-dot:hover {
   background: rgba(201, 162, 39, 0.5);
 }
 
-.country-dot.active {
+.country-dot.active,
+.service-dot.active {
   background: var(--champagne-gold);
   border-color: var(--champagne-gold);
   width: 26px;
   border-radius: 5px;
 }
 
-.country-dot:focus-visible {
+.country-dot:focus-visible,
+.service-dot:focus-visible {
   outline: 2px solid var(--champagne-gold);
   outline-offset: 2px;
 }
 
-/* Destination Photograph in Country Card */
-.country-photo-container {
+/* Destination / Service Photograph in Card */
+.country-photo-container,
+.service-photo-container {
   width: 100%;
   height: 160px;
   border-radius: 10px;
@@ -810,7 +835,8 @@ header {
   box-shadow: 0 4px 12px rgba(7, 27, 54, 0.08);
 }
 
-.country-photo {
+.country-photo,
+.service-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -818,45 +844,54 @@ header {
   transition: transform 0.4s ease;
 }
 
-.country-carousel-card:hover .country-photo {
+.country-carousel-card:hover .country-photo,
+.service-carousel-card:hover .service-photo {
   transform: scale(1.03);
 }
 
-.country-visa-list {
+.country-visa-list,
+.service-info-list {
   padding-top: 4px;
 }
 
-.country-visa-list p {
+.country-visa-list p,
+.service-info-list p {
   color: var(--text-muted);
   line-height: 1.8;
   font-size: 15px;
   margin: 0;
 }
 
-/* Countries We Serve: Permanently Visible Card Content */
-.country-carousel-card .accordion-content {
+/* Permanently Visible Card Content */
+.country-carousel-card .accordion-content,
+.service-carousel-card .service-details {
   display: block !important;
   margin-top: 10px;
   padding-top: 0;
   border-top: none;
 }
 
-.country-carousel-card h3 {
+.country-carousel-card h3,
+.service-carousel-card h3 {
   cursor: default;
   margin-bottom: 8px;
 }
 
 .country-carousel-card.is-prev h3,
-.country-carousel-card.is-next h3 {
+.country-carousel-card.is-next h3,
+.service-carousel-card.is-prev h3,
+.service-carousel-card.is-next h3 {
   cursor: pointer;
 }
 
-.country-carousel-card .accordion-arrow {
+.country-carousel-card .accordion-arrow,
+.service-carousel-card .accordion-arrow {
   display: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .country-carousel-card {
+  .country-carousel-card,
+  .service-carousel-card {
     transition: none !important;
     filter: none !important;
   }
@@ -1438,28 +1473,34 @@ footer {
     width: 100%;
   }
 
-  /* Countries Carousel Tablet Adjustments */
-  .country-carousel-stage {
+  /* Countries & Services Carousel Tablet Adjustments */
+  .country-carousel-stage,
+  .service-carousel-stage {
     min-height: 500px;
   }
 
-  .country-carousel-card {
+  .country-carousel-card,
+  .service-carousel-card {
     width: 320px;
   }
 
-  .country-carousel-card.is-prev {
+  .country-carousel-card.is-prev,
+  .service-carousel-card.is-prev {
     transform: translate3d(-52%, 0, -40px) scale(0.85);
   }
 
-  .country-carousel-card.is-next {
+  .country-carousel-card.is-next,
+  .service-carousel-card.is-next {
     transform: translate3d(52%, 0, -40px) scale(0.85);
   }
 
-  .country-carousel-arrow.prev {
+  .country-carousel-arrow.prev,
+  .service-carousel-arrow.prev {
     left: 4px;
   }
 
-  .country-carousel-arrow.next {
+  .country-carousel-arrow.next,
+  .service-carousel-arrow.next {
     right: 4px;
   }
 }
@@ -1550,49 +1591,58 @@ footer {
     height: 19px;
   }
 
-  .country-carousel-stage {
+  .country-carousel-stage,
+  .service-carousel-stage {
     min-height: 460px;
   }
 
-  .country-carousel-card {
+  .country-carousel-card,
+  .service-carousel-card {
     width: calc(100% - 48px);
     max-width: 310px;
     padding: 18px 14px;
   }
 
-  .country-photo-container {
+  .country-photo-container,
+  .service-photo-container {
     height: 130px;
     margin: 4px 0 10px;
     border-radius: 8px;
   }
 
-  .country-carousel-card.is-prev {
+  .country-carousel-card.is-prev,
+  .service-carousel-card.is-prev {
     transform: translate3d(-44%, 0, -30px) scale(0.84);
     opacity: 0.35;
     filter: blur(1.5px);
   }
 
-  .country-carousel-card.is-next {
+  .country-carousel-card.is-next,
+  .service-carousel-card.is-next {
     transform: translate3d(44%, 0, -30px) scale(0.84);
     opacity: 0.35;
     filter: blur(1.5px);
   }
 
-  .country-carousel-arrow {
+  .country-carousel-arrow,
+  .service-carousel-arrow {
     width: 38px;
     height: 38px;
   }
 
-  .country-carousel-arrow svg {
+  .country-carousel-arrow svg,
+  .service-carousel-arrow svg {
     width: 18px;
     height: 18px;
   }
 
-  .country-carousel-arrow.prev {
+  .country-carousel-arrow.prev,
+  .service-carousel-arrow.prev {
     left: 2px;
   }
 
-  .country-carousel-arrow.next {
+  .country-carousel-arrow.next,
+  .service-carousel-arrow.next {
     right: 2px;
   }
 
@@ -1935,109 +1985,144 @@ footer {
     <h2 class="title">Our Services</h2>
     <div class="title-underline"></div>
   </div>
-  <div class="grid">
-    <!-- Tourist Visa -->
-    <div class="card accordion-card">
-      <h3 onclick="toggle('tourist')">
-        <span class="card-title-left">
-          <div class="card-icon-badge">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"></path>
-            </svg>
+  <div class="service-carousel-container">
+    <div class="service-carousel-wrapper">
+      <!-- Prev Arrow Button -->
+      <button type="button" class="service-carousel-arrow prev" onclick="prevService()" aria-label="Previous Service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Carousel Stage -->
+      <div class="service-carousel-stage" id="serviceStage" role="region" aria-label="Our Services Carousel">
+        <!-- Tourist Visa -->
+        <div class="card service-carousel-card is-active" data-service-index="0" data-service-id="tourist" onclick="handleServiceCardClick(0, 'tourist', event)" onkeydown="handleServiceCardKeyDown(0, 'tourist', event)" tabindex="0" role="group" aria-label="Tourist Visa Details" aria-hidden="false">
+          <h3>
+            <span class="card-title-left">
+              <div class="card-icon-badge">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"></path>
+                </svg>
+              </div>
+              <span>Tourist Visa</span>
+            </span>
+          </h3>
+          <div id="tourist" class="service-details">
+            <div class="service-photo-container">
+              <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80" alt="International travel destinations and tourism landmarks" class="service-photo" loading="lazy">
+            </div>
+            <div class="service-info-list">
+              <p>
+                • Visitor Visa Guidance<br>
+                • Documentation Support<br>
+                • Application Assistance<br>
+                • Travel Planning Advice
+              </p>
+            </div>
           </div>
-          <span>Tourist Visa</span>
-        </span>
-        <div class="accordion-arrow" id="arrow-tourist">
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </div>
-      </h3>
-      <div id="tourist" class="accordion-content" style="display:none;">
-        <p>
-          • Visitor Visa Guidance<br>
-          • Documentation Support<br>
-          • Application Assistance<br>
-          • Travel Planning Advice
-        </p>
+
+        <!-- Study Visa -->
+        <div class="card service-carousel-card is-next" data-service-index="1" data-service-id="study" onclick="handleServiceCardClick(1, 'study', event)" onkeydown="handleServiceCardKeyDown(1, 'study', event)" tabindex="0" role="group" aria-label="Study Visa Details" aria-hidden="false">
+          <h3>
+            <span class="card-title-left">
+              <div class="card-icon-badge">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <span>Study Visa</span>
+            </span>
+          </h3>
+          <div id="study" class="service-details">
+            <div class="service-photo-container">
+              <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" alt="University campus and international educational buildings" class="service-photo" loading="lazy">
+            </div>
+            <div class="service-info-list">
+              <p>
+                • University Admission Guidance<br>
+                • Study Visa Assistance<br>
+                • Documentation Support<br>
+                • Pre-Departure Guidance
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Work Opportunities -->
+        <div class="card service-carousel-card is-hidden-back" data-service-index="2" data-service-id="work" onclick="handleServiceCardClick(2, 'work', event)" onkeydown="handleServiceCardKeyDown(2, 'work', event)" tabindex="0" role="group" aria-label="Work Opportunities Details" aria-hidden="true">
+          <h3>
+            <span class="card-title-left">
+              <div class="card-icon-badge">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <span>Work Opportunities</span>
+            </span>
+          </h3>
+          <div id="work" class="service-details">
+            <div class="service-photo-container">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Modern business district and international professional workplace" class="service-photo" loading="lazy">
+            </div>
+            <div class="service-info-list">
+              <p>
+                • Overseas Job Information<br>
+                • Work Permit Guidance<br>
+                • Documentation Support<br>
+                • Consultation Services
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Immigration Guidance -->
+        <div class="card service-carousel-card is-prev" data-service-index="3" data-service-id="immigration" onclick="handleServiceCardClick(3, 'immigration', event)" onkeydown="handleServiceCardKeyDown(3, 'immigration', event)" tabindex="0" role="group" aria-label="Immigration Guidance Details" aria-hidden="false">
+          <h3>
+            <span class="card-title-left">
+              <div class="card-icon-badge">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <span>Immigration Guidance</span>
+            </span>
+          </h3>
+          <div id="immigration" class="service-details">
+            <div class="service-photo-container">
+              <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="International travel airplane flight above clouds" class="service-photo" loading="lazy">
+            </div>
+            <div class="service-info-list">
+              <p>
+                • Immigration Consultation<br>
+                • Profile Assessment<br>
+                • Pathway Information<br>
+                • Documentation Guidance
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Next Arrow Button -->
+      <button type="button" class="service-carousel-arrow next" onclick="nextService()" aria-label="Next Service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
     </div>
 
-    <!-- Study Visa -->
-    <div class="card accordion-card">
-      <h3 onclick="toggle('study')">
-        <span class="card-title-left">
-          <div class="card-icon-badge">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-            </svg>
-          </div>
-          <span>Study Visa</span>
-        </span>
-        <div class="accordion-arrow" id="arrow-study">
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </div>
-      </h3>
-      <div id="study" class="accordion-content" style="display:none;">
-        <p>
-          • University Admission Guidance<br>
-          • Study Visa Assistance<br>
-          • Documentation Support<br>
-          • Pre-Departure Guidance
-        </p>
-      </div>
-    </div>
-
-    <!-- Work Opportunities -->
-    <div class="card accordion-card">
-      <h3 onclick="toggle('work')">
-        <span class="card-title-left">
-          <div class="card-icon-badge">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-            </svg>
-          </div>
-          <span>Work Opportunities</span>
-        </span>
-        <div class="accordion-arrow" id="arrow-work">
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </div>
-      </h3>
-      <div id="work" class="accordion-content" style="display:none;">
-        <p>
-          • Overseas Job Information<br>
-          • Work Permit Guidance<br>
-          • Documentation Support<br>
-          • Consultation Services
-        </p>
-      </div>
-    </div>
-
-    <!-- Immigration Guidance -->
-    <div class="card accordion-card">
-      <h3 onclick="toggle('immigration')">
-        <span class="card-title-left">
-          <div class="card-icon-badge">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
-          </div>
-          <span>Immigration Guidance</span>
-        </span>
-        <div class="accordion-arrow" id="arrow-immigration">
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </div>
-      </h3>
-      <div id="immigration" class="accordion-content" style="display:none;">
-        <p>
-          • Immigration Consultation<br>
-          • Profile Assessment<br>
-          • Pathway Information<br>
-          • Documentation Guidance
-        </p>
-      </div>
+    <!-- Carousel Dots -->
+    <div class="service-carousel-dots" id="serviceDots" role="tablist" aria-label="Services Carousel Navigation">
+      <button type="button" class="service-dot active" onclick="goToService(0)" role="tab" aria-selected="true" aria-label="Go to Tourist Visa"></button>
+      <button type="button" class="service-dot" onclick="goToService(1)" role="tab" aria-selected="false" aria-label="Go to Study Visa"></button>
+      <button type="button" class="service-dot" onclick="goToService(2)" role="tab" aria-selected="false" aria-label="Go to Work Opportunities"></button>
+      <button type="button" class="service-dot" onclick="goToService(3)" role="tab" aria-selected="false" aria-label="Go to Immigration Guidance"></button>
     </div>
   </div>
 </section>
@@ -2840,49 +2925,101 @@ function closeNavMenu() {
   }
 }
 
-/* Single-Open Accordion for Services */
-var serviceItems = ["tourist", "study", "work", "immigration"];
-var activeService = null;
+/* Our Services Overlapping 3D Carousel Controller */
+var currentServiceIndex = 0;
+var totalServices = 4;
 
-function closeAccordionItem(itemId) {
-  var el = document.getElementById(itemId);
-  var arrow = document.getElementById("arrow-" + itemId);
-  if (el) {
-    el.style.display = "none";
-  }
-  if (arrow) {
-    arrow.style.transform = "rotate(0deg)";
+function syncServiceStageHeight() {
+  var stage = document.getElementById("serviceStage");
+  var activeCard = document.querySelector(".service-carousel-card.is-active");
+  if (stage && activeCard) {
+    var cardHeight = activeCard.offsetHeight || activeCard.scrollHeight;
+    stage.style.minHeight = Math.max(480, cardHeight + 42) + "px";
   }
 }
 
-function openAccordionItem(itemId) {
-  var el = document.getElementById(itemId);
-  var arrow = document.getElementById("arrow-" + itemId);
-  if (el) {
-    el.style.display = "block";
+function updateServiceCarousel() {
+  var cards = document.querySelectorAll(".service-carousel-card");
+  var dots = document.querySelectorAll(".service-dot");
+
+  cards.forEach(function(card) {
+    var index = parseInt(card.getAttribute("data-service-index"), 10);
+    var diff = index - currentServiceIndex;
+
+    // Normalize diff to -1 .. +2 range for 4 items circular loop
+    if (diff > 2) diff -= 4;
+    if (diff < -1) diff += 4;
+
+    // Reset position classes
+    card.classList.remove(
+      "is-active",
+      "is-prev",
+      "is-next",
+      "is-hidden-back"
+    );
+
+    if (diff === 0) {
+      card.classList.add("is-active");
+      card.setAttribute("aria-hidden", "false");
+    } else if (diff === -1) {
+      card.classList.add("is-prev");
+      card.setAttribute("aria-hidden", "false");
+    } else if (diff === 1) {
+      card.classList.add("is-next");
+      card.setAttribute("aria-hidden", "false");
+    } else {
+      card.classList.add("is-hidden-back");
+      card.setAttribute("aria-hidden", "true");
+    }
+  });
+
+  dots.forEach(function(dot, idx) {
+    if (idx === currentServiceIndex) {
+      dot.classList.add("active");
+      dot.setAttribute("aria-selected", "true");
+    } else {
+      dot.classList.remove("active");
+      dot.setAttribute("aria-selected", "false");
+    }
+  });
+
+  setTimeout(syncServiceStageHeight, 50);
+}
+
+function goToService(targetIndex) {
+  currentServiceIndex = ((targetIndex % totalServices) + totalServices) % totalServices;
+  updateServiceCarousel();
+}
+
+function nextService() {
+  goToService(currentServiceIndex + 1);
+}
+
+function prevService() {
+  goToService(currentServiceIndex - 1);
+}
+
+function handleServiceCardClick(index, serviceId, event) {
+  if (index !== currentServiceIndex) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    goToService(index);
   }
-  if (arrow) {
-    arrow.style.transform = "rotate(180deg)";
+}
+
+function handleServiceCardKeyDown(index, serviceId, event) {
+  if (event.key === "Enter" || event.key === " ") {
+    if (index !== currentServiceIndex) {
+      event.preventDefault();
+      goToService(index);
+    }
   }
 }
 
 function toggle(id) {
-  if (serviceItems.indexOf(id) !== -1) {
-    // Services Accordion Group: strictly single-open
-    var isCurrentlyOpen = (activeService === id);
-
-    // Unconditionally close all service cards
-    serviceItems.forEach(function(item) {
-      closeAccordionItem(item);
-    });
-
-    if (isCurrentlyOpen) {
-      activeService = null;
-    } else {
-      openAccordionItem(id);
-      activeService = id;
-    }
-  }
+  // Maintained for backward compatibility
 }
 
 /* Countries We Serve Overlapping 3D Carousel Controller */
@@ -2998,20 +3135,86 @@ function handleCountryCardKeyDown(index, countryId, event) {
   }
 }
 
-// Keyboard navigation (ArrowLeft / ArrowRight) when #destinations is in view
+// Keyboard navigation (ArrowLeft / ArrowRight) for active carousel in view
 document.addEventListener("keydown", function(e) {
-  var destinations = document.getElementById("destinations");
-  if (!destinations) return;
-  var rect = destinations.getBoundingClientRect();
-  var inView = rect.top < window.innerHeight && rect.bottom > 0;
-  if (!inView) return;
+  if (["INPUT", "TEXTAREA", "SELECT"].indexOf(document.activeElement && document.activeElement.tagName) !== -1) return;
 
-  if (e.key === "ArrowLeft") {
-    prevCountry();
-  } else if (e.key === "ArrowRight") {
-    nextCountry();
+  if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+    var servicesSec = document.getElementById("services");
+    var destinationsSec = document.getElementById("destinations");
+
+    // If focused inside a specific carousel
+    if (servicesSec && servicesSec.contains(document.activeElement)) {
+      if (e.key === "ArrowLeft") prevService();
+      else nextService();
+      return;
+    }
+    if (destinationsSec && destinationsSec.contains(document.activeElement)) {
+      if (e.key === "ArrowLeft") prevCountry();
+      else nextCountry();
+      return;
+    }
+
+    // Otherwise determine which section is closer to the center of the viewport
+    var vCenter = window.innerHeight / 2;
+    var sRect = servicesSec ? servicesSec.getBoundingClientRect() : null;
+    var dRect = destinationsSec ? destinationsSec.getBoundingClientRect() : null;
+
+    var sDist = sRect && sRect.top < window.innerHeight && sRect.bottom > 0
+      ? Math.abs((sRect.top + sRect.bottom) / 2 - vCenter)
+      : Infinity;
+    var dDist = dRect && dRect.top < window.innerHeight && dRect.bottom > 0
+      ? Math.abs((dRect.top + dRect.bottom) / 2 - vCenter)
+      : Infinity;
+
+    if (sDist < dDist && sDist !== Infinity) {
+      if (e.key === "ArrowLeft") prevService();
+      else nextService();
+    } else if (dDist !== Infinity) {
+      if (e.key === "ArrowLeft") prevCountry();
+      else nextCountry();
+    }
   }
 });
+
+// Mobile touch swipe for services carousel
+(function setupServiceSwipe() {
+  var stage = document.getElementById("serviceStage");
+  if (!stage) return;
+  var touchStartX = 0;
+  var touchStartY = 0;
+  var touchEndX = 0;
+  var touchEndY = 0;
+
+  stage.addEventListener("touchstart", function(e) {
+    if (e.touches && e.touches.length > 0) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchEndX = touchStartX;
+      touchEndY = touchStartY;
+    }
+  }, { passive: true });
+
+  stage.addEventListener("touchmove", function(e) {
+    if (e.touches && e.touches.length > 0) {
+      touchEndX = e.touches[0].clientX;
+      touchEndY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  stage.addEventListener("touchend", function() {
+    var deltaX = touchEndX - touchStartX;
+    var deltaY = touchEndY - touchStartY;
+    // Horizontal swipe must dominate vertical scroll
+    if (Math.abs(deltaX) > 36 && Math.abs(deltaX) > Math.abs(deltaY) * 1.3) {
+      if (deltaX < 0) {
+        nextService();
+      } else {
+        prevService();
+      }
+    }
+  }, { passive: true });
+})();
 
 // Mobile touch swipe for countries carousel
 (function setupCountrySwipe() {
@@ -3052,26 +3255,21 @@ document.addEventListener("keydown", function(e) {
   }, { passive: true });
 })();
 
-// Initialize country carousel immediately
+// Initialize carousels immediately
+updateServiceCarousel();
 updateCountryCarousel();
 
-/* Enforce single-open state across breakpoint resizing and device rotation */
+/* Synchronize stage heights across breakpoint resizing and device rotation */
 window.addEventListener("resize", function() {
-  if (activeService) {
-    serviceItems.forEach(function(item) {
-      if (item !== activeService) closeAccordionItem(item);
-    });
-  }
+  syncServiceStageHeight();
   syncCountryStageHeight();
 });
 
 window.addEventListener("orientationchange", function() {
-  if (activeService) {
-    serviceItems.forEach(function(item) {
-      if (item !== activeService) closeAccordionItem(item);
-    });
-  }
-  setTimeout(syncCountryStageHeight, 150);
+  setTimeout(function() {
+    syncServiceStageHeight();
+    syncCountryStageHeight();
+  }, 150);
 });
 
 /* Background Image Rotation */
@@ -3209,9 +3407,11 @@ window.onload = function() {
   window.scrollTo(0, 0);
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
+  syncServiceStageHeight();
   syncCountryStageHeight();
   setTimeout(function(){
     window.scrollTo(0, 0);
+    syncServiceStageHeight();
     syncCountryStageHeight();
   }, 10);
   setTimeout(function(){
@@ -3220,6 +3420,7 @@ window.onload = function() {
       splash.style.opacity = "0";
       setTimeout(function(){
         splash.style.display = "none";
+        syncServiceStageHeight();
         syncCountryStageHeight();
       }, 600);
     }
