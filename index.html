@@ -608,7 +608,7 @@ header {
 .service-carousel-stage {
   position: relative;
   width: 100%;
-  min-height: 520px;
+  min-height: 540px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -622,6 +622,8 @@ header {
   position: absolute;
   width: 380px;
   max-width: 86vw;
+  padding: 32px 28px;
+  min-height: 425px;
   background: var(--card-bg);
   border-radius: 14px;
   border-top: 3px solid var(--champagne-gold);
@@ -1476,12 +1478,14 @@ footer {
   /* Countries & Services Carousel Tablet Adjustments */
   .country-carousel-stage,
   .service-carousel-stage {
-    min-height: 500px;
+    min-height: 525px;
   }
 
   .country-carousel-card,
   .service-carousel-card {
     width: 320px;
+    padding: 28px 20px;
+    min-height: 405px;
   }
 
   .country-carousel-card.is-prev,
@@ -1593,14 +1597,15 @@ footer {
 
   .country-carousel-stage,
   .service-carousel-stage {
-    min-height: 460px;
+    min-height: 495px;
   }
 
   .country-carousel-card,
   .service-carousel-card {
     width: calc(100% - 48px);
     max-width: 310px;
-    padding: 18px 14px;
+    padding: 24px 14px;
+    min-height: 385px;
   }
 
   .country-photo-container,
@@ -2934,7 +2939,7 @@ function syncServiceStageHeight() {
   var activeCard = document.querySelector(".service-carousel-card.is-active");
   if (stage && activeCard) {
     var cardHeight = activeCard.offsetHeight || activeCard.scrollHeight;
-    stage.style.minHeight = Math.max(480, cardHeight + 42) + "px";
+    stage.style.minHeight = Math.max(495, cardHeight + 44) + "px";
   }
 }
 
@@ -3031,7 +3036,7 @@ function syncCountryStageHeight() {
   var activeCard = document.querySelector(".country-carousel-card.is-active");
   if (stage && activeCard) {
     var cardHeight = activeCard.offsetHeight || activeCard.scrollHeight;
-    stage.style.minHeight = Math.max(480, cardHeight + 42) + "px";
+    stage.style.minHeight = Math.max(495, cardHeight + 44) + "px";
   }
 }
 
