@@ -2306,7 +2306,7 @@ footer {
    How It Works — Premium Stacked Scroll Cards (#how-it-works)
    ========================================================================== */
 #how-it-works {
-  padding: 70px 20px 40px;
+  padding: 70px 20px 0;
   max-width: 1160px;
   margin: auto;
   scroll-margin-top: 84px;
@@ -2357,13 +2357,20 @@ footer {
 .card-step-4 {
   top: 174px;
   z-index: 4;
-  margin-bottom: 50px;
+  margin-bottom: 0;
 }
 
 .how-it-works-buffer {
-  height: 90px;
-  width: 100%;
-  pointer-events: none;
+  display: none;
+}
+
+/* Free Assessment Section Spacing Adjustment */
+#assessment {
+  padding-top: 50px;
+}
+
+#assessment .section-header {
+  margin-bottom: 24px;
 }
 
 .step-card-inner {
@@ -2480,7 +2487,15 @@ footer {
 
 @media (max-width: 640px) {
   #how-it-works {
-    padding: 50px 16px 30px;
+    padding: 50px 16px 0;
+  }
+
+  #assessment {
+    padding-top: 42px;
+  }
+
+  #assessment .section-header {
+    margin-bottom: 20px;
   }
 
   .stacked-step-card {
@@ -2498,7 +2513,15 @@ footer {
 
 @media (max-width: 480px) {
   #how-it-works {
-    padding: 44px 14px 20px;
+    padding: 44px 14px 0;
+  }
+
+  #assessment {
+    padding-top: 36px;
+  }
+
+  #assessment .section-header {
+    margin-bottom: 18px;
   }
 
   .stacked-step-card {
@@ -2523,11 +2546,11 @@ footer {
 
   .card-step-4 {
     top: 128px;
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 
   .how-it-works-buffer {
-    height: 60px;
+    display: none;
   }
 
   .step-title {
@@ -4125,7 +4148,6 @@ footer {
         </div>
       </div>
     </div>
-    <div class="how-it-works-buffer"></div>
   </div>
 </section>
 
