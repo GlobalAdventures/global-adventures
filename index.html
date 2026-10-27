@@ -2302,6 +2302,258 @@ footer {
   }
 }
 
+/* ==========================================================================
+   How It Works — Premium Stacked Scroll Cards (#how-it-works)
+   ========================================================================== */
+#how-it-works {
+  padding: 70px 20px 40px;
+  max-width: 1160px;
+  margin: auto;
+  scroll-margin-top: 84px;
+}
+
+.how-it-works-container {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.how-it-works-stack {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.stacked-step-card {
+  position: sticky;
+  background: #FFFFFF;
+  border-radius: 18px;
+  border: 1px solid #E1E6EC;
+  border-top: 4px solid #D2AA35;
+  box-shadow: 0 10px 32px rgba(19, 39, 65, 0.08);
+  padding: 34px 36px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, opacity 0.25s ease;
+  will-change: transform, box-shadow;
+}
+
+.card-step-1 {
+  top: 96px;
+  z-index: 1;
+  margin-bottom: 60px;
+}
+
+.card-step-2 {
+  top: 122px;
+  z-index: 2;
+  margin-bottom: 60px;
+}
+
+.card-step-3 {
+  top: 148px;
+  z-index: 3;
+  margin-bottom: 60px;
+}
+
+.card-step-4 {
+  top: 174px;
+  z-index: 4;
+  margin-bottom: 50px;
+}
+
+.how-it-works-buffer {
+  height: 90px;
+  width: 100%;
+  pointer-events: none;
+}
+
+.step-card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.step-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step-number-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #132741 0%, #1A365D 100%);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1.5px solid #D2AA35;
+  box-shadow: 0 4px 12px rgba(19, 39, 65, 0.2);
+}
+
+.step-num-prefix {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #D2AA35;
+}
+
+.step-num-val {
+  font-size: 18px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.step-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(210, 170, 53, 0.12);
+  border: 1px solid rgba(210, 170, 53, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-icon-wrap svg {
+  width: 22px;
+  height: 22px;
+  stroke: #D2AA35;
+}
+
+.step-content-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #132741;
+  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+}
+
+.step-tagline {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #D2AA35;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 12px;
+}
+
+.step-description {
+  font-size: 15px;
+  color: #4A5568;
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.step-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F5F7FA;
+  border: 1px solid #E1E6EC;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.step-highlight-item svg {
+  width: 16px;
+  height: 16px;
+  stroke: #D2AA35;
+  flex-shrink: 0;
+}
+
+.step-highlight-item span {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #132741;
+}
+
+@media (max-width: 640px) {
+  #how-it-works {
+    padding: 50px 16px 30px;
+  }
+
+  .stacked-step-card {
+    padding: 26px 20px;
+  }
+
+  .step-title {
+    font-size: 20px;
+  }
+
+  .step-description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #how-it-works {
+    padding: 44px 14px 20px;
+  }
+
+  .stacked-step-card {
+    padding: 22px 16px;
+    border-radius: 14px;
+  }
+
+  .card-step-1 {
+    top: 74px;
+    margin-bottom: 45px;
+  }
+
+  .card-step-2 {
+    top: 92px;
+    margin-bottom: 45px;
+  }
+
+  .card-step-3 {
+    top: 110px;
+    margin-bottom: 45px;
+  }
+
+  .card-step-4 {
+    top: 128px;
+    margin-bottom: 40px;
+  }
+
+  .how-it-works-buffer {
+    height: 60px;
+  }
+
+  .step-title {
+    font-size: 19px;
+  }
+
+  .step-tagline {
+    font-size: 12px;
+  }
+
+  .step-description {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .step-highlight-item {
+    padding: 8px 11px;
+    gap: 8px;
+  }
+
+  .step-highlight-item span {
+    font-size: 12.5px;
+  }
+}
+
 /* Mobile Responsive */
 @media (max-width: 820px) {
   nav {
@@ -3539,6 +3791,344 @@ footer {
   </div>
 </section>
 
+<!-- Global Adventures vs. Other Agents Comparison -->
+<section id="comparison">
+  <div class="section-header">
+    <h2 class="title">Global Adventures vs. Other Agents</h2>
+    <div class="title-underline"></div>
+    <p class="section-subtitle">Compare our approach and discover the support available for your journey.</p>
+  </div>
+
+  <div class="comparison-container">
+    <div class="comparison-card">
+      <div class="comparison-table-wrap">
+        <table class="comparison-table" aria-label="Global Adventures vs Other Agents Comparison">
+          <thead>
+            <tr>
+              <th class="col-feature" scope="col">Feature</th>
+              <th class="col-ga" scope="col">
+                <span class="th-brand-title">Global Adventures</span>
+                <span class="th-brand-badge">Certified Standard</span>
+              </th>
+              <th class="col-other" scope="col">Other Agents</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cell-feature">Personalized Visa Guidance</td>
+              <td class="cell-ga">
+                <span class="cmp-icon check" aria-label="Included in Global Adventures">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+              </td>
+              <td class="cell-other">
+                <span class="cmp-icon cross" aria-label="Not typically included with other agents">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="cell-feature">Free Eligibility Assessment</td>
+              <td class="cell-ga">
+                <span class="cmp-icon check" aria-label="Included in Global Adventures">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+              </td>
+              <td class="cell-other">
+                <span class="cmp-icon cross" aria-label="Not typically included with other agents">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="cell-feature">Document Guidance</td>
+              <td class="cell-ga">
+                <span class="cmp-icon check" aria-label="Included in Global Adventures">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+              </td>
+              <td class="cell-other">
+                <span class="cmp-icon check" aria-label="Included with other agents">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="cell-feature">Multiple Country Options</td>
+              <td class="cell-ga">
+                <span class="cmp-icon check" aria-label="Included in Global Adventures">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+              </td>
+              <td class="cell-other">
+                <span class="cmp-icon check" aria-label="Included with other agents">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="cell-feature">Online Application Tracking</td>
+              <td class="cell-ga">
+                <span class="cmp-icon check" aria-label="Included in Global Adventures">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+              </td>
+              <td class="cell-other">
+                <span class="cmp-icon cross" aria-label="Not typically included with other agents">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="cell-feature">Application Progress Updates</td>
+              <td class="cell-ga">
+                <span class="cmp-icon check" aria-label="Included in Global Adventures">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+              </td>
+              <td class="cell-other">
+                <span class="cmp-icon cross" aria-label="Not typically included with other agents">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="cell-feature">Refusal Case Guidance</td>
+              <td class="cell-ga">
+                <span class="cmp-icon check" aria-label="Included in Global Adventures">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+              </td>
+              <td class="cell-other">
+                <span class="cmp-icon cross" aria-label="Not typically included with other agents">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="cell-feature">Post-Application Support</td>
+              <td class="cell-ga">
+                <span class="cmp-icon check" aria-label="Included in Global Adventures">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+              </td>
+              <td class="cell-other">
+                <span class="cmp-icon cross" aria-label="Not typically included with other agents">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works — Premium Stacked Scroll Cards -->
+<section id="how-it-works">
+  <div class="section-header">
+    <h2 class="title">How It Works</h2>
+    <div class="title-underline"></div>
+    <p class="section-subtitle">A seamless, transparent step-by-step journey from initial consultation to settling in your dream destination.</p>
+  </div>
+
+  <div class="how-it-works-container">
+    <div class="how-it-works-stack" id="howItWorksStack">
+      <!-- Card 01 -->
+      <div class="stacked-step-card card-step-1" data-step="1">
+        <div class="step-card-inner">
+          <div class="step-card-top">
+            <div class="step-number-badge">
+              <span class="step-num-prefix">STEP</span>
+              <span class="step-num-val">01</span>
+            </div>
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="step-content-main">
+            <h3 class="step-title">Free Assessment</h3>
+            <p class="step-tagline">Initial Profile Evaluation & Feasibility Check</p>
+            <p class="step-description">Share your educational background, work experience, and destination preferences. Our licensed specialists evaluate your profile against current immigration criteria at zero cost with zero obligation.</p>
+            <div class="step-highlights">
+              <div class="step-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Comprehensive points & eligibility score check</span>
+              </div>
+              <div class="step-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Accurate multi-country pathway comparison</span>
+              </div>
+              <div class="step-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Transparent timelines and realistic success analysis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 02 -->
+      <div class="stacked-step-card card-step-2" data-step="2">
+        <div class="step-card-inner">
+          <div class="step-card-top">
+            <div class="step-number-badge">
+              <span class="step-num-prefix">STEP</span>
+              <span class="step-num-val">02</span>
+            </div>
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="step-content-main">
+            <h3 class="step-title">Plan & Prepare</h3>
+            <p class="step-tagline">Custom Strategy & Complete Document Guidance</p>
+            <p class="step-description">We design a personalized roadmap specifically tailored to your selected visa route. Our team assists with credential evaluations (WES/ECA), language test preparation, financial documentation, and proof of ties.</p>
+            <div class="step-highlights">
+              <div class="step-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Custom document checklist & verification review</span>
+              </div>
+              <div class="step-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>ECA, skills assessment & IELTS / PTE strategy</span>
+              </div>
+              <div class="step-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Financial proof & bank statement compliance audit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 03 -->
+      <div class="stacked-step-card card-step-3" data-step="3">
+        <div class="step-card-inner">
+          <div class="step-card-top">
+            <div class="step-number-badge">
+              <span class="step-num-prefix">STEP</span>
+              <span class="step-num-val">03</span>
+            </div>
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 14 14"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="step-content-main">
+            <h3 class="step-title">Apply & Track Online</h3>
+            <p class="step-tagline">Meticulous Filing & Continuous Status Updates</p>
+            <p class="step-description">Your application undergoes rigorous multi-tier audit checks before being lodged directly through official government immigration portals. We track milestones, coordinate biometric appointments, and provide ongoing updates.</p>
+            <div class="step-highlights">
+              <div class="step-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Error-free official portal lodgement & verification</span>
+              </div>
+              <div class="step-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Biometric scheduling & medical examination setup</span>
+              </div>
+              <div class="step-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Direct tracking updates & prompt responses to embassy queries</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 04 -->
+      <div class="stacked-step-card card-step-4" data-step="4">
+        <div class="step-card-inner">
+          <div class="step-card-top">
+            <div class="step-number-badge">
+              <span class="step-num-prefix">STEP</span>
+              <span class="step-num-val">04</span>
+            </div>
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="step-content-main">
+            <h3 class="step-title">Land & Settle</h3>
+            <p class="step-tagline">Pre-Departure Guidance & Post-Arrival Peace of Mind</p>
+            <p class="step-description">Our support extends well past your visa grant. We conduct comprehensive pre-departure briefings, review border-entry protocols, advise on currency/forex exchange, and guide you through your initial days abroad.</p>
+            <div class="step-highlights">
+              <div class="step-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pre-flight checklist & airport border control briefing</span>
+              </div>
+              <div class="step-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Forex, international SIM & banking recommendations</span>
+              </div>
+              <div class="step-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Initial accommodation & settling-in advisory</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="how-it-works-buffer"></div>
+  </div>
+</section>
+
 <!-- Free Assessment -->
 <section id="assessment">
   <div class="section-header">
@@ -3884,178 +4474,6 @@ footer {
     <span class="review-dot" onclick="goToReviewSlide(2)" aria-label="Review group 3"></span>
     <span class="review-dot" onclick="goToReviewSlide(3)" aria-label="Review group 4"></span>
     <span class="review-dot" onclick="goToReviewSlide(4)" aria-label="Review group 5"></span>
-  </div>
-</section>
-
-<!-- Global Adventures vs. Other Agents Comparison -->
-<section id="comparison">
-  <div class="section-header">
-    <h2 class="title">Global Adventures vs. Other Agents</h2>
-    <div class="title-underline"></div>
-    <p class="section-subtitle">Compare our approach and discover the support available for your journey.</p>
-  </div>
-
-  <div class="comparison-container">
-    <div class="comparison-card">
-      <div class="comparison-table-wrap">
-        <table class="comparison-table" aria-label="Global Adventures vs Other Agents Comparison">
-          <thead>
-            <tr>
-              <th class="col-feature" scope="col">Feature</th>
-              <th class="col-ga" scope="col">
-                <span class="th-brand-title">Global Adventures</span>
-                <span class="th-brand-badge">Certified Standard</span>
-              </th>
-              <th class="col-other" scope="col">Other Agents</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="cell-feature">Personalized Visa Guidance</td>
-              <td class="cell-ga">
-                <span class="cmp-icon check" aria-label="Included in Global Adventures">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-              </td>
-              <td class="cell-other">
-                <span class="cmp-icon cross" aria-label="Not typically included with other agents">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td class="cell-feature">Free Eligibility Assessment</td>
-              <td class="cell-ga">
-                <span class="cmp-icon check" aria-label="Included in Global Adventures">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-              </td>
-              <td class="cell-other">
-                <span class="cmp-icon cross" aria-label="Not typically included with other agents">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td class="cell-feature">Document Guidance</td>
-              <td class="cell-ga">
-                <span class="cmp-icon check" aria-label="Included in Global Adventures">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-              </td>
-              <td class="cell-other">
-                <span class="cmp-icon check" aria-label="Included with other agents">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td class="cell-feature">Multiple Country Options</td>
-              <td class="cell-ga">
-                <span class="cmp-icon check" aria-label="Included in Global Adventures">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-              </td>
-              <td class="cell-other">
-                <span class="cmp-icon check" aria-label="Included with other agents">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td class="cell-feature">Online Application Tracking</td>
-              <td class="cell-ga">
-                <span class="cmp-icon check" aria-label="Included in Global Adventures">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-              </td>
-              <td class="cell-other">
-                <span class="cmp-icon cross" aria-label="Not typically included with other agents">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td class="cell-feature">Application Progress Updates</td>
-              <td class="cell-ga">
-                <span class="cmp-icon check" aria-label="Included in Global Adventures">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-              </td>
-              <td class="cell-other">
-                <span class="cmp-icon cross" aria-label="Not typically included with other agents">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td class="cell-feature">Refusal Case Guidance</td>
-              <td class="cell-ga">
-                <span class="cmp-icon check" aria-label="Included in Global Adventures">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-              </td>
-              <td class="cell-other">
-                <span class="cmp-icon cross" aria-label="Not typically included with other agents">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td class="cell-feature">Post-Application Support</td>
-              <td class="cell-ga">
-                <span class="cmp-icon check" aria-label="Included in Global Adventures">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-              </td>
-              <td class="cell-other">
-                <span class="cmp-icon cross" aria-label="Not typically included with other agents">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -5250,6 +5668,69 @@ function resetEligibilityChecker() {
   if (section) {
     section.scrollIntoView({ behavior: "smooth", block: "start" });
   }
+}
+
+/* ==========================================================================
+   How It Works — Stacked Scroll Animation Engine
+   ========================================================================== */
+function initStackedCardsAnimation() {
+  var cards = document.querySelectorAll(".stacked-step-card");
+  if (!cards || cards.length === 0) return;
+
+  var ticking = false;
+
+  function updateStackedEffect() {
+    var totalCards = cards.length;
+    for (var i = 0; i < totalCards; i++) {
+      var currentCard = cards[i];
+      var nextCard = cards[i + 1];
+
+      if (nextCard) {
+        var nextRect = nextCard.getBoundingClientRect();
+        var currentTopStyle = parseInt(window.getComputedStyle(currentCard).top, 10) || 96;
+
+        // Progress of nextCard covering currentCard
+        var distance = nextRect.top - currentTopStyle;
+        var threshold = 180;
+
+        if (distance <= threshold && distance >= 0) {
+          var ratio = 1 - (distance / threshold);
+          var scale = 1 - (ratio * 0.04);
+          var opacity = 1 - (ratio * 0.12);
+          currentCard.style.transform = "scale(" + scale.toFixed(3) + ")";
+          currentCard.style.opacity = opacity.toFixed(2);
+        } else if (distance < 0) {
+          currentCard.style.transform = "scale(0.96)";
+          currentCard.style.opacity = "0.88";
+        } else {
+          currentCard.style.transform = "scale(1)";
+          currentCard.style.opacity = "1";
+        }
+      } else {
+        // Last card (04 — Land & Settle) finishes animation cleanly at 1.0 scale
+        currentCard.style.transform = "scale(1)";
+        currentCard.style.opacity = "1";
+      }
+    }
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateStackedEffect);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  updateStackedEffect();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initStackedCardsAnimation);
+} else {
+  initStackedCardsAnimation();
 }
 
 /* WhatsApp Lead Form Logic */
